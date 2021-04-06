@@ -1,5 +1,9 @@
 <?php 
 
+require_once './vendor/autoload.php';
+use SecureEnvPHP\SecureEnvPHP;
+(new SecureEnvPHP())->parse('./clock/.env.enc', '.env.key');
+
 class Database{
     
     private $host;
@@ -10,17 +14,13 @@ class Database{
     public $conn;
     
     public function __construct(){
-        //dev mode
-        // $this->host = 'localhost';
-        // $this->dbname = 'db_food_app';
-        // $this->dbuser = 'root';
-        // $this->dbpass = '';
+       
 
         //prod mode
-        $this->host = 'eu-cdbr-west-01.cleardb.com';
-        $this->dbname = 'heroku_4576f989dde6a1e';
-        $this->dbuser = 'bc5109bae534fb';
-        $this->dbpass = '4efea717';
+        $this->host = getenv('DB_HOST');
+        $this->dbname = getenv('DB_NAME');
+        $this->dbuser = getenv('DB_USER');
+        $this->dbpass = getenv('DB_PASS');
         
         $dsn = "mysql:host=".$this->host.";dbname=".$this->dbname;
         

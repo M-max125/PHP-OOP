@@ -1,0 +1,6 @@
+{
+    "require": {
+        "sendgrid/sendgrid": "^7.9",
+        "johnathanmiller/secure-env-php": "^2.0"
+    }
+}
