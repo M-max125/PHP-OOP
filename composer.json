@@ -1,6 +1,7 @@
 {
     "require": {
         "sendgrid/sendgrid": "^7.9",
-        "johnathanmiller/secure-env-php": "^2.0"
+        "johnathanmiller/secure-env-php": "^2.0",
+        "phpmailer/phpmailer": "^6.4"
     }
 }

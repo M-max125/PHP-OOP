@@ -21,6 +21,10 @@ class ComposerStaticInitc33167cf95932adc2fdc499352578b5b
             'SendGrid\\' => 9,
             'SecureEnvPHP\\' => 13,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -51,6 +55,10 @@ class ComposerStaticInitc33167cf95932adc2fdc499352578b5b
         'SecureEnvPHP\\' => 
         array (
             0 => __DIR__ . '/..' . '/johnathanmiller/secure-env-php/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
     );
 
