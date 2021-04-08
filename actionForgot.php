@@ -37,7 +37,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST)){
             $mail->Password = getenv('M_PASS');
             $mail->SMTPSecure= PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
-
             $mail->setFrom(getenv('M_KEY'),'4Meat Lovers');
             $mail->addAddress($email);
 
@@ -54,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST)){
         }
         catch(Exception $e){
             echo $fuser->alert('red','Something went wrong.Please try again later.');
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
+            
         }
     }else{
         echo $fuser->alert('red','This e-mail is not registered.');

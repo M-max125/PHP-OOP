@@ -113,7 +113,28 @@ class Auth extends Database{
         return $result;
     }
 
-    
+    //Reset password
+
+    public function resetPass($email,$token){
+        $sql = "SELECT id FROM users WHERE email = :email AND token = :token AND token != '' AND token_expire > NOW()";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam("email",$email);
+        $stmt->bindParam("token",$token);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
+        
+    }
+    //Update new password
+    public function updatePass($pass,$email){
+        $sql = "UPDATE users SET token = '',password = :pass WHERE email = :email";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam("pass",$pass);
+        $stmt->bindParam("email",$email);
+        $stmt->execute();
+
+        return true;
+    }
 
    
      
