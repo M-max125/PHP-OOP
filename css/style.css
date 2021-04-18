@@ -251,6 +251,7 @@ header {
 .exp-description p,.add-on-text {
   line-height: 1.6;
   margin-bottom: 2.4rem;
+  text-align: justify;
 }
 .tasty {
   background: url("../images/tasty2.jpg") center no-repeat;
